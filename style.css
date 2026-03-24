@@ -1,0 +1,152 @@
+html {
+    background-color: #3b608c
+}
+
+body {
+    position: relative; /* required for overlay */
+    font-family: "Verdana", sans-serif;
+    background-image: linear-gradient(to bottom, rgba(255,255,255,0) 70%, #1e5e48 100%), url('https://media.discordapp.net/attachments/1146256531906637846/1486048821371994142/IMG_1593.jpeg?ex=69c41650&is=69c2c4d0&hm=059002b79dbafd56947a700d441cb742afa40ed5a23f337c6e91ad277ce53fee&=&format=webp&width=1392&height=1392');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    padding-bottom: 60px;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0, 100, 255, 0.4); /* semi-transparent blue */
+    z-index: 1; /* overlay above image but below content */
+}
+
+#professional-images {
+    position: relative;  /* create stacking context */
+    z-index: 2;          /* above the blue overlay */
+    color:#ffffff;
+    text-align: center;
+}
+
+.my-responsive-img {
+    max-width: 100%;
+    height: auto;
+}
+
+.col-md-3 a {
+    display: block; color: #ffffff;
+    margin-top: 10px;
+}
+
+#professional-images .row > div {
+    border: 2px solid #ffffff; /* white border, adjust color as needed */
+    padding: 10px;             /* optional: add spacing inside the border */
+    border-radius: 8px;        /* optional: rounded corners */
+    margin-bottom: 20px;       /* optional: space between rows on smaller screens */
+}
+
+.introduction-fluid, nav, footer {
+    position: relative;
+    z-index: 2; /* content above overlay */
+}
+
+.navbar-nav {
+    position: static;
+    top: 0;
+    background-color: #C7CAFF;
+}
+
+.introduction-fluid {
+    position: relative;
+}
+
+h1 {
+    font-family: "Georgia", sans-serif;
+    font-weight: bold;
+    position: absolute;
+    top: 10%; /* relative to viewport height */
+    left: 61.7%; /* always center horizontally */
+    transform: translateX(-50%);
+    font-size: 3vw;
+    margin: 0;
+}
+
+.purpose {
+    position: absolute;
+    top: 18%; /* relative spacing below h1 */
+    left: 70%;
+    transform: translateX(-50%);
+    font-size: 2vw;
+    margin: 0;
+}
+
+.img-fluid {
+    width: 30%;
+    height: auto;
+    display: block;
+    margin-left: 50%;
+    transform: translateX(-100%);
+    position: relative;
+    top: 50px;
+    border: 3px solid black;
+    margin-bottom: 100px;
+}
+
+.links {
+    position: relative;
+    margin-top: 2em; /* optional spacing from content */
+    width: 100%;
+    padding: 10px 0;
+    text-align: center;
+    background-color: #27282E;
+    color: aliceblue;
+}
+
+
+
+.i {
+    top:10%;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    body {
+        height: auto; /* let content determine height */
+    }
+
+    h1, .purpose {
+        position: static; /* prevent overflow on small screens */
+        transform: none;
+        text-align: center;
+        margin: 1em 0 0.5em 0;
+        font-size: 6vw; /* responsive font */
+    }
+
+    .site-summary {
+        font-size: 4vw; /* responsive font */
+        margin: 10px auto 20px auto;
+    }
+
+    .links {
+        position: relative; /* follows content flow */
+        margin-top: 2em; /* optional spacing */
+    }
+
+    .my-responsive-img {
+        max-width: 70%;
+        height: auto;
+    }
+
+    .img-fluid {
+        width: 70%; /* larger and more visible */
+        transform: translateX(0);
+        margin: 20px auto 0 auto; /* centered with spacing */
+        top: 0;
+    }
+
+    .navbar-nav {
+        position: relative; /* keep navbar static */
+    }
+}
+
